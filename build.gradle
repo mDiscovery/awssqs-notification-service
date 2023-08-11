@@ -26,6 +26,9 @@ dependencies {
 
 	implementation "org.mapstruct:mapstruct:$mapStructVersion"
 
+	implementation "software.amazon.awssdk:aws-sdk-java:$awsSdkVersion"
+	implementation "software.amazon.awssdk:sqs:$awsSdkVersion"
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
 }
