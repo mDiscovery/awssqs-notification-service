@@ -30,6 +30,7 @@ dependencies {
     implementation "software.amazon.awssdk:sqs:$awsSdkVersion"
     implementation "io.awspring.cloud:spring-cloud-aws-starter:$springCloudAws"
     implementation "io.awspring.cloud:spring-cloud-aws-sqs:$springCloudAws"
+    implementation "io.awspring.cloud:spring-cloud-aws-messaging:$springCloudAwsMessaging"
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
