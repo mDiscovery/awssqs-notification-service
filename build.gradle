@@ -32,6 +32,8 @@ dependencies {
     implementation "io.awspring.cloud:spring-cloud-aws-sqs:$springCloudAws"
     implementation "io.awspring.cloud:spring-cloud-aws-messaging:$springCloudAwsMessaging"
 
+    implementation "com.google.code.findbugs:jsr305:$googleFindBugsVersion"
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
 }
