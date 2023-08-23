@@ -40,6 +40,7 @@ public class AwsConfig {
                 .withRegion(region)
                 .build();
     }
+
     @Bean
     public QueueMessagingTemplate queueMessagingTemplate(AmazonSQSAsync amazonSQSAsync) {
         return new QueueMessagingTemplate(amazonSQSAsync);
