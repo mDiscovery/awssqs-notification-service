@@ -34,7 +34,7 @@ public class AwsConfig {
 
     @Bean
     public AmazonSQSAsync amazonSQSAsync(AWSCredentialsProvider awsCredentialsProvider,
-                                         @Value("") String region) {
+                                         @Value("sqs.notification.queue.region") String region) {
         return AmazonSQSAsyncClientBuilder.standard()
                 .withCredentials(awsCredentialsProvider)
                 .withRegion(region)
