@@ -5,4 +5,11 @@ spring:
   r2dbc:
     url: r2dbc:pool:postgres://localhost:5432/postgres
     username: postgres
-    password: maksik
+    password:
+  cloud:
+    aws:
+      credentials:
+        access-key:
+        secret-key:
+      region:
+        static: us-east-1
