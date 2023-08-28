@@ -13,3 +13,9 @@ spring:
         secret-key:
       region:
         static: us-east-1
+
+sqs:
+  notifications:
+    queue:
+      name: mDiscovery-sqs.fifo
+      region: us-east-1
