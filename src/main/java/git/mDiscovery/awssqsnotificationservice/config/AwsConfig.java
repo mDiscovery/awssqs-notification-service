@@ -27,8 +27,8 @@ public class AwsConfig {
 
     @Bean
     public AwsCredentialsProvider awsAsyncCredentialsProvider(
-            @Value("spring.cloud.aws.credentials.access-key") String accessKey,
-            @Value("spring.cloud.aws.credentials.secret-key") String secretKey) {
+            @Value("${spring.cloud.aws.credentials.access-key}") String accessKey,
+            @Value("${spring.cloud.aws.credentials.secret-key}") String secretKey) {
         return StaticCredentialsProvider.create(AwsBasicCredentials.create(accessKey, secretKey));
     }
 
