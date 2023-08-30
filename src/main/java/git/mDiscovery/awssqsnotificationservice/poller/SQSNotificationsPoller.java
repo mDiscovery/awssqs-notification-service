@@ -23,6 +23,6 @@ public class SQSNotificationsPoller {
     public void receiveMessage(@Payload NotificationDto message) {
         log.info("received notification: {}", message);
         NotificationEntity entity = notificationMapper.map(message);
-        notificationRepository.save(entity);
+        notificationRepository.save(entity).subscribe();
     }
 }
