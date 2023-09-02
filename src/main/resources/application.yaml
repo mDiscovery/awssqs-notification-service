@@ -1,0 +1,26 @@
+server:
+  port: 8083
+
+spring:
+  r2dbc:
+    url: r2dbc:pool:postgres://localhost:5432/postgres
+    username: postgres
+    password:
+  flyway:
+    url: jdbc:postgresql://localhost:5432/postgres
+    user: postgres
+    password: maksik
+    locations: classpath:db/migration
+  cloud:
+    aws:
+      credentials:
+        access-key: KEY
+        secret-key: SECRET
+      region:
+        static: us-east-1
+
+sqs:
+  notifications:
+    queue:
+      name: mDiscovery-sqs.fifo
+      region: us-east-1

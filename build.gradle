@@ -1,26 +1,48 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.1.2'
-	id 'io.spring.dependency-management' version '1.1.2'
+    id 'java'
+    id 'org.springframework.boot' version "$springBootVersion"
+    id 'io.spring.dependency-management' version "$springDependencyManagementVersion"
 }
 
 group = 'git.mDiscovery'
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0'
 
 java {
-	sourceCompatibility = '17'
+    sourceCompatibility = '17'
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'io.projectreactor:reactor-test'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.session:spring-session-core'
+    implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+
+    implementation "org.postgresql:postgresql:$postgresVersion"
+    implementation "io.r2dbc:r2dbc-postgresql:$r2dbcVersion"
+    implementation "org.flywaydb:flyway-core:$flywayDbVersion"
+
+    implementation "org.mapstruct:mapstruct:$mapStructVersion"
+
+    implementation "software.amazon.awssdk:aws-sdk-java:$awsSdkVersion"
+    implementation "software.amazon.awssdk:sqs:$awsSdkVersion"
+    implementation "io.awspring.cloud:spring-cloud-aws-starter:$springCloudAws"
+    implementation "io.awspring.cloud:spring-cloud-aws-sqs:$springCloudAws"
+    implementation "io.awspring.cloud:spring-cloud-aws-messaging:$springCloudAwsMessaging"
+    implementation "io.awspring.cloud:spring-cloud-aws-autoconfigure:$springCloudAwsMessaging"
+
+    implementation "com.google.code.findbugs:jsr305:$googleFindBugsVersion"
+
+    compileOnly "org.projectlombok:lombok"
+    annotationProcessor "org.projectlombok:lombok"
+    annotationProcessor "org.mapstruct:mapstruct-processor:$mapStructVersion"
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
