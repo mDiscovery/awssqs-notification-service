@@ -9,4 +9,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RequestMapping("api/v1/notifications")
 public class NotificationControllerV1 {
+    private final NotificationService notificationService;
 }
