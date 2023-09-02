@@ -20,4 +20,12 @@ public class NotificationService {
         return notificationRepository.findById(uid)
                 .map(notificationMapper::map);
     }
+    public Mono<NotificationDto> findWithRecipientByUid(String uid) {
+        return notificationRepository.findById(uid)
+                .flatMap(notificationEntity -> recipientRepository.findById(notificationEntity.getRecipientUid())
+                        .map(recipientEntity -> {
+                            notificationEntity.setRecipient(recipientEntity);
+                            return notificationEntity;
+                        }).map(notificationMapper::map));
+    }
 }
