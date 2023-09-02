@@ -13,4 +13,9 @@ import reactor.core.publisher.Mono;
 @RequestMapping("api/v2/notifications")
 public class NotificationControllerV2 {
     private final NotificationService notificationService;
+
+    @GetMapping("/{uid}")
+    public Mono<?> findByUid(@PathVariable String uid) {
+        return notificationService.findWithRecipientByUid(uid);
+    }
 }
